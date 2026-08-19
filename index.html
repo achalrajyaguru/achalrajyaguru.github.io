@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achal Rajyaguru · Data Engineer</title>
+<meta name="description" content="Achal Rajyaguru is a data engineer in Toronto with three years of full-stack and backend engineering behind him.">
+<meta property="og:title" content="Achal Rajyaguru · Data Engineer">
+<meta property="og:description" content="Data engineer in Toronto. Three years of full-stack and backend engineering. SQL, Python, AWS, Terraform certified. Canadian PR, no sponsorship required.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F6F8F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111714" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23177357'/%3E%3Ctext x='50' y='68' font-size='54' font-family='monospace' font-weight='bold' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F8F5;
+    --panel: #FFFFFF;
+    --ink: #14211B;
+    --ink-soft: #46564E;
+    --line: #D8E0DA;
+    --pine: #177357;
+    --pine-deep: #0E523D;
+    --signal: #E8B931;
+    --header-bg: rgba(246,248,245,0.92);
+    --done-bg: #E3EFE9;
+    --warn-bg: #FBF3D6;
+    --warn-text: #7A5E00;
+    --active-bg: #F0F7F3;
+    --endpoint-bg: #14211B;
+    --endpoint-text: #EDF3EF;
+    --endpoint-soft: #B9C7BF;
+    --endpoint-line: #3A4A41;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "IBM Plex Sans", system-ui, sans-serif;
+    --display: "Archivo", system-ui, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #111714;
+      --panel: #171F1B;
+      --ink: #E7EDE9;
+      --ink-soft: #9DAFA5;
+      --line: #2A342E;
+      --pine: #3AA37C;
+      --pine-deep: #7BCCA9;
+      --signal: #E8B931;
+      --header-bg: rgba(17,23,20,0.9);
+      --done-bg: #1B2C24;
+      --warn-bg: #2E2712;
+      --warn-text: #E5C458;
+      --active-bg: #182720;
+      --endpoint-bg: #1C2721;
+      --endpoint-text: #E7EDE9;
+      --endpoint-soft: #9DAFA5;
+      --endpoint-line: #38463F;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--pine);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Nav ---------- */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--header-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .monogram {
+    font-family: var(--display); font-weight: 800; font-size: 20px;
+    text-decoration: none; letter-spacing: -0.02em;
+  }
+  .monogram span { color: var(--pine); }
+  nav ul { display: flex; gap: 26px; list-style: none; }
+  nav a {
+    font-family: var(--mono); font-size: 12.5px; text-decoration: none;
+    color: var(--ink-soft); letter-spacing: 0.02em;
+  }
+  nav a:hover { color: var(--pine-deep); }
+  .resume-btn {
+    font-family: var(--mono); font-size: 12.5px; text-decoration: none;
+    color: var(--pine-deep); border: 1.5px solid var(--pine);
+    padding: 7px 14px; border-radius: 8px; white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .resume-btn:hover { background: var(--pine); color: #fff; }
+  .nav-right { display: flex; align-items: center; gap: 26px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 84px 0 30px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12.5px; color: var(--pine-deep);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--signal); box-shadow: 0 0 0 4px rgba(232,185,49,0.25);
+  }
+  h1 {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(44px, 7.5vw, 84px);
+    line-height: 0.98; letter-spacing: -0.03em;
+    margin: 20px 0 22px; max-width: 14ch;
+  }
+  h1 em { font-style: normal; color: var(--pine); }
+  .lede {
+    font-size: 18px; color: var(--ink-soft); max-width: 56ch;
+  }
+  .lede strong { color: var(--ink); font-weight: 600; }
+  .kw-line {
+    font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft);
+    margin-top: 18px; letter-spacing: 0.02em;
+  }
+  .kw-line b { color: var(--pine-deep); font-weight: 500; }
+
+  /* ---------- Pipeline (signature) ---------- */
+  .pipeline { padding: 48px 0 90px; }
+  .pipe-frame {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 26px 26px 30px;
+    box-shadow: 0 1px 2px rgba(20,33,27,0.04), 0 12px 32px -20px rgba(20,33,27,0.18);
+  }
+  .pipe-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 12px; color: var(--ink-soft);
+    border-bottom: 1px dashed var(--line); padding-bottom: 14px; margin-bottom: 26px;
+  }
+  .pipe-head .job { color: var(--pine-deep); font-weight: 500; }
+  .dag { display: grid; grid-template-columns: 1fr 56px 1fr 56px 1fr; align-items: stretch; gap: 0; }
+  .node {
+    border: 1.5px solid var(--line); border-radius: 10px; padding: 18px;
+    background: var(--paper); position: relative;
+  }
+  .node .stage {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--ink-soft);
+  }
+  .node h3 { font-family: var(--display); font-size: 19px; font-weight: 700; margin: 8px 0 6px; letter-spacing: -0.01em; }
+  .node p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
+  .node .edu { display: flex; flex-direction: column; gap: 9px; }
+  .node .edu b { display: block; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+  .node .edu span { font-size: 12px; color: var(--ink-soft); }
+  .status {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--mono); font-size: 11px; margin-top: 12px;
+    padding: 3px 9px; border-radius: 99px;
+  }
+  .status.done { background: var(--done-bg); color: var(--pine-deep); }
+  .status.running { background: var(--warn-bg); color: var(--warn-text); }
+  .status.running .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--signal); animation: pulse 1.4s ease-in-out infinite; }
+  .status.done .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pine); }
+  @keyframes pulse { 50% { opacity: 0.25; } }
+
+  .edge { position: relative; }
+  .edge svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .edge line {
+    stroke: var(--pine); stroke-width: 2; stroke-dasharray: 6 7;
+    animation: flow 1.2s linear infinite;
+  }
+  @keyframes flow { to { stroke-dashoffset: -13; } }
+
+  .node.active { border-color: var(--pine); background: var(--active-bg); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 74px 0; border-top: 1px solid var(--line); }
+  .sec-label {
+    font-family: var(--mono); font-size: 12.5px; color: var(--pine-deep);
+    letter-spacing: 0.08em; margin-bottom: 10px;
+  }
+  h2 {
+    font-family: var(--display); font-weight: 800; font-size: clamp(28px, 4vw, 40px);
+    letter-spacing: -0.02em; margin-bottom: 30px;
+  }
+
+  /* Schema table */
+  .schema { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .schema table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  .schema th {
+    font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.08em;
+    text-align: left; color: var(--ink-soft); font-weight: 500;
+    padding: 13px 20px; background: var(--paper); border-bottom: 1px solid var(--line);
+  }
+  .schema td { padding: 13px 20px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .schema tr:last-child td { border-bottom: none; }
+  .schema td:first-child { font-family: var(--mono); font-size: 13.5px; color: var(--pine-deep); white-space: nowrap; }
+  .tag {
+    font-family: var(--mono); font-size: 11px; padding: 2px 8px; border-radius: 99px;
+    border: 1px solid var(--line); color: var(--ink-soft); white-space: nowrap;
+  }
+  .tag.hot { border-color: var(--signal); background: var(--warn-bg); color: var(--warn-text); }
+
+  /* Runs (projects) */
+  .runs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .run {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px; display: flex; flex-direction: column; gap: 10px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .run:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgba(20,33,27,0.28); }
+  .run-id { font-family: var(--mono); font-size: 11.5px; color: var(--ink-soft); display: flex; justify-content: space-between; }
+  .run h3 { font-family: var(--display); font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .run .outcome { font-size: 14.5px; font-weight: 600; color: var(--pine-deep); }
+  .run p { font-size: 14px; color: var(--ink-soft); flex: 1; }
+  .run .stack { display: flex; flex-wrap: wrap; gap: 6px; }
+  .run a.view {
+    font-family: var(--mono); font-size: 12.5px; color: var(--pine-deep);
+    text-decoration: none; margin-top: 4px;
+  }
+  .run a.view:hover { text-decoration: underline; }
+  .run .repo-note { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+
+  /* Logs (experience) */
+  .logs { font-family: var(--mono); font-size: 13.5px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 8px 0; }
+  .log { display: grid; grid-template-columns: 130px 1fr; gap: 18px; padding: 13px 22px; border-bottom: 1px dashed var(--line); }
+  .log:last-child { border-bottom: none; }
+  .log time { color: var(--ink-soft); }
+  .log .msg { color: var(--ink); line-height: 1.55; }
+  .log .msg b { color: var(--pine-deep); font-weight: 500; }
+
+  /* Contact */
+  .endpoint {
+    background: var(--endpoint-bg); color: var(--endpoint-text); border-radius: 14px;
+    padding: 40px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; align-items: center;
+  }
+  .endpoint .verb { font-family: var(--mono); font-size: 12.5px; color: var(--signal); margin-bottom: 10px; }
+  .endpoint h2 { color: var(--endpoint-text); margin-bottom: 12px; }
+  .endpoint p { color: var(--endpoint-soft); font-size: 15px; max-width: 44ch; }
+  .cta-list { display: flex; flex-direction: column; gap: 12px; }
+  .cta {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 13.5px; text-decoration: none;
+    border: 1px solid var(--endpoint-line); border-radius: 10px; padding: 13px 18px; color: var(--endpoint-text);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { border-color: var(--signal); background: rgba(232,185,49,0.08); }
+  .cta span:last-child { color: var(--signal); }
+
+  footer {
+    padding: 34px 0 44px; font-family: var(--mono); font-size: 12px; color: var(--ink-soft);
+    display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 820px) {
+    nav ul { display: none; }
+    .dag { grid-template-columns: 1fr; grid-auto-rows: auto; }
+    .edge { height: 44px; }
+    .edge line { x1: 50%; x2: 50%; }
+    .runs { grid-template-columns: 1fr; }
+    .endpoint { grid-template-columns: 1fr; padding: 30px 24px; }
+    .log { grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .edge line, .status.running .dot { animation: none; }
+    html { scroll-behavior: auto; }
+    .run:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="monogram" href="#top">achal<span>.</span></a>
+    <div class="nav-right">
+      <nav aria-label="Sections">
+        <ul>
+          <li><a href="#schema">skills</a></li>
+          <li><a href="#runs">projects</a></li>
+          <li><a href="#logs">experience</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </nav>
+      <a class="resume-btn" href="resume.pdf" download>resume.pdf ↓</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <p class="eyebrow">Data Engineer · Toronto, ON · Open to work</p>
+    <h1>Achal <em>Rajyaguru</em></h1>
+    <p class="lede">
+      A software engineer who kept specializing in the data layer: three years of full-stack and backend
+      work, from a production job marketplace serving 1,500+ users to enterprise systems for oil and gas.
+      The common thread was always <strong>the data</strong>. Now I'm making it the whole job.
+    </p>
+    <p class="kw-line">SQL · Python · Node.js · AWS · Docker · <b>Terraform certified</b> · Canadian PR, <b>no sponsorship required</b> · <b>available immediately</b></p>
+  </div>
+
+  <div class="wrap pipeline" id="pipeline">
+    <div class="pipe-frame" role="img" aria-label="Career path: education 2017 to 2023, software engineering 2019 to 2026, data engineering 2026 to present">
+      <div class="dag">
+        <div class="node">
+          <p class="stage">2017 – 2023</p>
+          <h3>Education</h3>
+          <div class="edu">
+            <p><b>M.S. Computer Engineering</b><span>San Jose State University · San Jose, CA, USA · 2021 – 2023</span></p>
+            <p><b>B.Tech Computer Engineering</b><span>Charusat · Anand, India · 2017 – 2021</span></p>
+          </div>
+        </div>
+        <div class="edge" aria-hidden="true">
+          <svg><line x1="0" y1="50%" x2="100%" y2="50%"/></svg>
+        </div>
+        <div class="node">
+          <p class="stage">2019 – 2026</p>
+          <h3>Software Engineering</h3>
+          <p>Full-stack engineer at Celandyne Software Solutions. Earlier: enterprise backend at L&amp;T Technology Services and a machine learning research assistantship.</p>
+        </div>
+        <div class="edge" aria-hidden="true">
+          <svg><line x1="0" y1="50%" x2="100%" y2="50%"/></svg>
+        </div>
+        <div class="node active">
+          <p class="stage">2026 – present</p>
+          <h3>Data Engineering</h3>
+          <p>SQL-first. Building data pipelines and the projects below. Based in Toronto, open to work.</p>
+          <span class="status running"><span class="dot"></span>Current</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="schema">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="schema">
+        <table>
+          <thead>
+            <tr><th scope="col">skill</th><th scope="col">level</th><th scope="col">details</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SQL</td>
+              <td><span class="tag hot">primary</span></td>
+              <td>PostgreSQL, MySQL, MS SQL Server. Designed and maintained production schemas; currently deepening window functions, CTEs, and query optimization.</td>
+            </tr>
+            <tr>
+              <td>Data Modeling &amp; BI</td>
+              <td><span class="tag hot">building</span></td>
+              <td>Star schemas, facts and dimensions, semantic models. Power BI and DAX hands-on through the analytics platform project above.</td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td><span class="tag">core</span></td>
+              <td>ML pipelines with XGBoost, SMOTE, feature engineering, and data preprocessing on multi-year time-series data. Plus scripting and automation.</td>
+            </tr>
+            <tr>
+              <td>Cloud &amp; DevOps</td>
+              <td><span class="tag hot">certified</span></td>
+              <td>AWS, Docker, Kubernetes, Terraform (HashiCorp Certified Terraform Associate), CI/CD with Jenkins, GitHub Actions, and GitLab CI.</td>
+            </tr>
+            <tr>
+              <td>Backend</td>
+              <td><span class="tag">core</span></td>
+              <td>Node.js/Express, REST APIs, microservices, JWT auth, and system design. Java and C# in enterprise settings, TypeScript and React on the front.</td>
+            </tr>
+            <tr>
+              <td>Databases</td>
+              <td><span class="tag">core</span></td>
+              <td>MongoDB and Redis in production: search, filtering, and pagination APIs over large collections. Monitoring with ELK Stack and Prometheus.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="runs">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="runs">
+        <article class="run">
+          <p class="run-id"><span>Data engineering</span><span>in progress</span></p>
+          <h3>Hotel Operations Analytics Platform</h3>
+          <p class="outcome">End to end: star schema, versioned SQL transformations, Power BI dashboard.</p>
+          <p>Raw hotel operations data modeled into a documented star schema, transformed with tested, version-controlled SQL, and served through a Power BI semantic model with a dashboard structured KPIs first, then drivers, then details.</p>
+          <div class="stack">
+            <span class="tag">SQL</span><span class="tag">data modeling</span><span class="tag">Power BI</span>
+          </div>
+          <p class="repo-note">building in public · repo link coming with v1</p>
+        </article>
+        <article class="run">
+          <p class="run-id"><span>ML pipeline</span><span>shipped</span></p>
+          <h3>Predictive Maintenance</h3>
+          <p class="outcome">91 percent failure-prediction accuracy on 15,000+ records.</p>
+          <p>End-to-end ML pipeline predicting industrial equipment failure from multi-year time-series data. XGBoost across 25 features, SMOTE for class imbalance. Preprocessing and feature engineering were most of the work, which is usually the truth.</p>
+          <div class="stack">
+            <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">feature engineering</span>
+          </div>
+          <p class="repo-note">university research project</p>
+        </article>
+        <article class="run">
+          <p class="run-id"><span>Enterprise backend</span><span>shipped</span></p>
+          <h3>Industrial Data Platform</h3>
+          <p class="outcome">Cut computation time from minutes to 10 seconds for 3,000+ users.</p>
+          <p>Replaced a fragmented Excel workflow with a centralized system for an oil and gas manufacturing client. Built the formula evaluation engine in C# and designed the MS SQL Server database behind it.</p>
+          <div class="stack">
+            <span class="tag">C#</span><span class="tag">MS SQL Server</span><span class="tag">.NET</span>
+          </div>
+          <p class="repo-note">client work · happy to walk through the architecture</p>
+        </article>
+        <article class="run">
+          <p class="run-id"><span>Full-stack</span><span>in production</span></p>
+          <h3>Job Marketplace Platform</h3>
+          <p class="outcome">1,500+ active users in production.</p>
+          <p>Search, filter, and pagination APIs over MongoDB, JWT authentication with role-based access for candidates, recruiters, and admins, and automated testing with Vitest, Playwright, and axe-core.</p>
+          <div class="stack">
+            <span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">React</span>
+          </div>
+          <p class="repo-note">production system · proprietary codebase</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="logs">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <div class="logs">
+        <div class="log">
+          <time>2026-07</time>
+          <p class="msg">Relocated to Toronto, Canada as a permanent resident. Began focused transition into data engineering, SQL first.</p>
+        </div>
+        <div class="log">
+          <time>2023–2026</time>
+          <p class="msg">Software Engineer, Celandyne Software Solutions, San Jose, CA. Full-stack development on a production job marketplace platform serving 1,500+ users.</p>
+        </div>
+        <div class="log">
+          <time>2022–2023</time>
+          <p class="msg">Built Ice Breaker, a social matching platform used by 350+ SJSU students, processing WiFi access point data into dynamic match suggestions.</p>
+        </div>
+        <div class="log">
+          <time>2021–2023</time>
+          <p class="msg">M.S. Computer Engineering, San Jose State University, San Jose, CA, USA.</p>
+        </div>
+        <div class="log">
+          <time>2021</time>
+          <p class="msg">Undergraduate machine learning research assistant, Charusat. Predictive maintenance pipeline for industrial equipment.</p>
+        </div>
+        <div class="log">
+          <time>2019</time>
+          <p class="msg">Software engineering intern, Larsen &amp; Toubro Technology Services. Backend and MS SQL Server database work on enterprise manufacturing software for 3,000+ users.</p>
+        </div>
+        <div class="log">
+          <time>2017–2021</time>
+          <p class="msg">B.Tech Computer Engineering, Charotar University of Science and Technology, Anand, Gujarat, India.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="endpoint">
+        <div>
+          <h2>Open to data roles.</h2>
+          <p>Data engineer and analytics positions in the Greater Toronto Area or remote across Canada. Canadian permanent resident, no sponsorship required, available immediately. Fluent in English, Hindi, and Gujarati. If you have messy data and real deadlines, we should talk.</p>
+        </div>
+        <div class="cta-list">
+          <a class="cta" href="resume.pdf" download><span>resume</span><span>download pdf ↓</span></a>
+          <a class="cta" href="mailto:rajyaguruachal@gmail.com?subject=Data%20role"><span>email</span><span>rajyaguruachal@gmail.com</span></a>
+          <a class="cta" href="https://linkedin.com/in/achalrajyaguru"><span>linkedin</span><span>/in/achalrajyaguru</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <footer>
+      <span>© 2026 Achal Rajyaguru · Toronto, ON</span>
+      <span>No trackers. No cookies. One HTML file.</span>
+    </footer>
+  </div>
+</main>
+
+</body>
+</html>
